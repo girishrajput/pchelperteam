@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, Phone, MessageSquare, User } from 'lucide-react';
-import { sendEmail } from '../app/actions';
+import { sendEmail } from '../../app/actions';
 
 export default function ContactSection() {
 
