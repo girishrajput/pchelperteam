@@ -37,10 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Add the attribute here to ignore extension-injected attributes */}
-      <body suppressHydrationWarning={true} >
+      <body suppressHydrationWarning={true}>
         <Header />
-        <main  className="pt-24">{children}</main>
+        <main className="pt-24">{children}</main>
         <Footer />
       </body>
     </html>

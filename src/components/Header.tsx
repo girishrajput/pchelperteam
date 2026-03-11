@@ -1,4 +1,4 @@
-"use client"; // Required for useState in Next.js App Router
+"use client";
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -8,13 +8,33 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    setActiveSubmenu(null); // Reset submenus when closing mobile menu
+  };
 
-  // Submenu items data
-  const portals = [
-    { name: 'Client Portal', href: '/portals/client' },
-    { name: 'Partner Portal', href: '/portals/partner' },
-  ];
+  // Centralized Navigation Data
+  const menuData = {
+    portals: [
+      { name: 'Partner Portal', href: '/portals/partner' },
+      { name: 'Client Portal', href: '/portals/client' },
+    ],
+    products: [
+      { name: 'Software Solutions', href: '/products/software' },
+      { name: 'Hardware Systems', href: '/products/hardware' },
+      { name: 'Cloud Tools', href: '/products/cloud' },
+    ],
+    industries: [
+      { name: 'Healthcare', href: '/industries/healthcare' },
+      { name: 'Finance', href: '/industries/finance' },
+      { name: 'Education', href: '/industries/education' },
+    ],
+    services: [
+      { name: 'Consulting', href: '/Service/consulting' },
+      { name: 'Implementation', href: '/Service/implementation' },
+      { name: 'Support', href: '/Service/support' },
+    ]
+  };
 
   return (
     <header className="fixed w-full z-50 bg-white text-black shadow-md">
@@ -32,8 +52,8 @@ const Header = () => {
         </Link>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden p-2" 
+        <button
+          className="md:hidden p-2"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -47,67 +67,87 @@ const Header = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          <nav className="flex gap-6 items-center">
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex gap-5 items-center">
             <Link href="/" className="hover:text-red-600 transition">Home</Link>
-            <Link href="/About" className="hover:text-red-400 transition">About</Link>
-            
-            {/* Portals Submenu */}
-            <div 
-              className="relative group py-2"
-              onMouseEnter={() => setActiveSubmenu('portals')}
-              onMouseLeave={() => setActiveSubmenu(null)}
-            >
-              <button className="flex items-center gap-1 hover:text-red-600 transition">
-                Our Portals
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
-              </button>
-              
-              <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 border border-gray-100">
-                {portals.map((item) => (
-                  <Link key={item.name} href={item.href} className="block px-4 py-2 hover:bg-gray-50 hover:text-red-600">
-                    {item.name}
-                  </Link>
-                ))}
+            <Link href="/About" className="hover:text-red-600 transition">About</Link>
+
+            {/* Reusable Nav Dropdown Function */}
+            {[
+              { label: 'Our Portals', key: 'portals' },
+              { label: 'Products', key: 'products' },
+              { label: 'Industries', key: 'industries' },
+              { label: 'Services', key: 'services' }
+            ].map((item) => (
+              <div
+                key={item.key}
+                className="relative group py-2"
+                onMouseEnter={() => setActiveSubmenu(item.key)}
+                onMouseLeave={() => setActiveSubmenu(null)}
+              >
+                <button className="flex items-center gap-1 hover:text-red-600 transition">
+                  {item.label}
+                  <svg className={`w-4 h-4 transition-transform ${activeSubmenu === item.key ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-xl rounded-md py-2 w-52 border border-gray-100">
+                  {menuData[item.key as keyof typeof menuData].map((sub) => (
+                    <Link key={sub.name} href={sub.href} className="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-<Link href="/" className="hover:text-red-400 transition">Products </Link>
-            <Link href="/" className="hover:text-red-400 transition">Industries </Link>
-            <Link href="/Service" className="hover:text-red-400 transition">Service</Link>
-            <Link href="/Contact" className="hover:text-red-400 transition">Contact</Link>
+            ))}
+
+            <Link href="/Contact" className="hover:text-red-600 transition">Contact</Link>
           </nav>
 
-          <Link href="/Contact" className="bg-red-600 px-6 py-2 text-white rounded-lg hover:bg-red-700 transition">
+          <Link href="/Contact" className="bg-red-600 px-5 py-2 text-white rounded-lg hover:bg-red-700 transition whitespace-nowrap">
             Book a Free Consultation
           </Link>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white border-t border-gray-100 p-4 space-y-4`}>
-        <nav className="flex flex-col gap-4">
-          <Link href="/" onClick={toggleMenu}>Home</Link>
-          <Link href="/About" onClick={toggleMenu}>About</Link>
-          
-          {/* Mobile Accordion Submenu */}
-          <div>
-            <button 
-              onClick={() => setActiveSubmenu(activeSubmenu === 'portals' ? null : 'portals')}
-              className="flex justify-between w-full"
-            >
-              Our Portals <span>{activeSubmenu === 'portals' ? '-' : '+'}</span>
-            </button>
-            {activeSubmenu === 'portals' && (
-              <div className="pl-4 mt-2 flex flex-col gap-2 text-gray-600 text-sm">
-                {portals.map((item) => (
-                  <Link key={item.name} href={item.href} onClick={toggleMenu}>{item.name}</Link>
-                ))}
-              </div>
-            )}
-          </div>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white border-t border-gray-100 p-4 h-screen overflow-y-auto`}>
+        <nav className="flex flex-col gap-4 pb-20">
+          <Link href="/" onClick={toggleMenu} className="text-lg font-medium">Home</Link>
+          <Link href="/About" onClick={toggleMenu} className="text-lg font-medium">About</Link>
 
-          <Link href="/Service" onClick={toggleMenu}>Service</Link>
-          <Link href="/Contact" onClick={toggleMenu} className="bg-red-600 text-white p-3 text-center rounded-lg">
+          {/* Mobile Accordions */}
+          {[
+            { label: 'Our Portals', key: 'portals' },
+            { label: 'Products', key: 'products' },
+            { label: 'Industries', key: 'industries' },
+            { label: 'Services', key: 'services' }
+          ].map((item) => (
+            <div key={item.key} className="border-b border-gray-50 pb-2">
+              <button
+                onClick={() => setActiveSubmenu(activeSubmenu === item.key ? null : item.key)}
+                className="flex justify-between w-full text-lg font-medium"
+              >
+                {item.label} 
+                <span className="text-red-600">{activeSubmenu === item.key ? '−' : '+'}</span>
+              </button>
+              
+              {activeSubmenu === item.key && (
+                <div className="pl-4 mt-2 flex flex-col gap-3 text-gray-600 animate-fadeIn">
+                  {menuData[item.key as keyof typeof menuData].map((sub) => (
+                    <Link key={sub.name} href={sub.href} onClick={toggleMenu} className="hover:text-red-600">
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          <Link href="/Contact" onClick={toggleMenu} className="text-lg font-medium">Contact</Link>
+          
+          <Link href="/Contact" onClick={toggleMenu} className="bg-red-600 text-white p-4 text-center rounded-lg font-bold mt-4">
             Book a Free Consultation
           </Link>
         </nav>
