@@ -1,22 +1,17 @@
 import React from 'react';
 import { Eye, Target, Lightbulb, Users, TrendingUp, ShieldCheck } from 'lucide-react';
 import Image from "next/image";
+import InnerHeader from '@/components/InnerHeader'
 
 const AboutPage = () => {
   return (
-    <main className="min-h-screen bg-white font-sans text-gray-800">
+    <>
       {/* Hero Section */}
-      <section className="relative bg-red-900 py-20 px-6 text-center text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            About VGM Group limited.   – Excellence Beyond Boundaries
-          </h1>
-          <p className="text-lg md:text-xl text-red-100 italic">
-            Trusted offshore development partner delivering AI, web, and mobile solutions globally.
-          </p>
-        </div>
-      </section>
+
+      <InnerHeader
+        title="About VGM Group limited.   – Excellence Beyond Boundaries"
+        subtitle="Trusted offshore development partner delivering AI, web, and mobile solutions globally."
+      />
 
       {/* Main Content Grid */}
       <section className="max-w-7xl mx-auto py-16 px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -48,7 +43,7 @@ const AboutPage = () => {
         {/* Right Column: Certification Image */}
         <div className="lg:col-span-5 flex justify-center items-start">
           <div className="shadow-2xl rounded-lg overflow-hidden border border-gray-100 hover:scale-105 transition-transform duration-300">
-             <Image src="/about/certificate.png" alt="ISO 9001:2015 Certified" width={400} height={300} />
+            <Image src="/about/certificate.png" alt="ISO 9001:2015 Certified" width={400} height={300} />
           </div>
         </div>
       </section>
@@ -95,7 +90,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 
@@ -110,6 +105,7 @@ const ValueItem = ({ icon, title, text }: { icon: any, title: string, text: stri
       <p className="text-gray-600 leading-snug">{text}</p>
     </div>
   </div>
+
 );
 
 export default AboutPage;
