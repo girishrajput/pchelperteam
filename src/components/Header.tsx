@@ -101,7 +101,7 @@ const Header = () => {
                   </svg>
                 </button>
 
-                <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-xl rounded-md py-2 w-52 border border-gray-100">
+                <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-xl rounded-md py-2 w-60 border border-gray-100">
                   {menuData[item.key as keyof typeof menuData].map((sub) => (
                     <Link key={sub.name} href={sub.href} className="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">
                       {sub.name}
