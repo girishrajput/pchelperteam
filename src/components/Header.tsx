@@ -33,7 +33,6 @@ const Header = () => {
       { name: 'E-Commerce', href: '/industries/e-commerce' },
       { name: 'School & Education', href: '/industries/school-education' },
       { name: 'Travel', href: '/industries/travel' },
-      { name: 'Health Care', href: '/industries/healthcare' },
     ],    
     services: [
       { name: 'Web Designing', href: '/Service/web-designing' },

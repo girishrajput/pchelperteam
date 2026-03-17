@@ -1,6 +1,6 @@
 import ContactSection from '@/components/home/ContactSection'
 import Link from 'next/link';
-
+import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -48,8 +48,16 @@ const Footer = () => {
             {/* Brand/About Column */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-red-600 rounded-md flex items-center justify-center font-bold text-xl">V</div>
-                <span className="text-xl font-bold tracking-tight">VGM Group</span>
+                <Link href="/">
+          <Image
+            src="/images/vgm-logo.png"
+            alt="IRCOIT Logo"
+            width={150}
+            height={50}
+            priority
+            className="object-contain cursor-pointer filter brightness-0 invert"
+          />
+        </Link>
               </div>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                 Leading the industry with innovative solutions and world-class expertise since 2010.

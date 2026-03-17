@@ -10,7 +10,7 @@ function page() {
   return (
     <>
       <InnerHeader 
-                title="Digital Marketing Solutions" 
+                title="WhatsApp Business Solution" 
                 subtitle="Boost your online visibility and reach more customers with our effective digital marketing services." 
             />
       <WhyChoose />

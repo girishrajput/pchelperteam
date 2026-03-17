@@ -1,9 +1,18 @@
-import React from 'react'
+import InnerHeader from '@/components/InnerHeader'
+import TypeofService from '@/components/industries/schoolneducation/TypeofService';
+import Faq from '@/components/industries/schoolneducation/Faq';
 
 function page() {
   return (
-    <div>real-estate Marketing</div>
+    <>
+      <InnerHeader 
+                title="Modern Education Solutions" 
+                subtitle="Supporting schools and colleges with easy tools for studies and communication." 
+      />
+      <TypeofService/>
+      <Faq />
+    </>
   )
 }
 
-export default page
+export default page;
