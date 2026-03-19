@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
-
-
   const sections = [
     {
       title: "Our Portals",
@@ -27,14 +25,12 @@ const Footer = () => {
 
   const bottomLinks = ["Home", "About Us", "Blog", "Career", "Contact Us", "Press Release", "Terms & Conditions", "Privacy Policy", "Online Payment"];
 
-
   const socials = [
     { icon: Facebook, href: "#", label: "FB" },
     { icon: Twitter, href: "#", label: "TW" },
     { icon: Instagram, href: "#", label: "IG" },
     { icon: Linkedin, href: "#", label: "LI" },
   ];
-
 
   return (
     <>
@@ -49,21 +45,21 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-6">
                 <Link href="/">
-          <Image
-            src="/images/vgm-logo.png"
-            alt="IRCOIT Logo"
-            width={150}
-            height={50}
-            priority
-            className="object-contain cursor-pointer filter brightness-0 invert"
-          />
-        </Link>
+                  <Image
+                    src="/images/vgm-logo.png"
+                    alt="IRCOIT Logo"
+                    width={150}
+                    height={50}
+                    priority
+                    className="object-contain cursor-pointer filter brightness-0 invert"
+                  />
+                </Link>
               </div>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                 Leading the industry with innovative solutions and world-class expertise since 2010.
               </p>
+              
               {/* Social Icons */}
-
               <div className="flex gap-4">
                 {socials.map((social, index) => (
                   <a
@@ -84,9 +80,9 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-100 mb-6">
                   {section.title}
                 </h3>
-                <ul className="space-y-4">
+                <ul className="space-y-0 md:space-y-0 flex flex-wrap gap-2 md:gap-4 md:flex-col">
                   {section.links.map((link) => (
-                    <li key={link}>
+                    <li key={link} className="bg-gray-900 md:bg-transparent px-2 md:px-0 py-1 md:py-0 rounded-lg">
                       <Link href="#" className="group text-zinc-400 hover:text-red-500 text-sm transition-colors duration-200 flex items-center">
                         <span className="w-0 group-hover:w-2 h-[1px] bg-red-500 mr-0 group-hover:mr-2 transition-all"></span>
                         {link}
@@ -102,13 +98,15 @@ const Footer = () => {
               <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-100 mb-6">
                 Industries
               </h3>
-              <div className="grid gap-x-4 gap-y-4">
+              <ul className="space-y-0 md:space-y-0 flex flex-wrap gap-2 md:gap-4 md:flex-col">
                 {[...industries[0].left, ...industries[0].right].map((item) => (
-                  <Link key={item} href="#" className="text-zinc-400 hover:text-red-500 text-sm transition-colors">
-                    {item}
-                  </Link>
+                  <li key={item} className="bg-gray-900 md:bg-transparent px-2 md:px-0 py-1 md:py-0 rounded-lg">
+                    <Link href="#" className="text-zinc-400 hover:text-red-500 text-sm transition-colors">
+                      {item}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 
@@ -125,7 +123,6 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-            
           </div>
 
           {/* Bottom Credits */}
@@ -136,7 +133,7 @@ const Footer = () => {
         </div>
       </footer>
     </>
-
   );
 };
+
 export default Footer;
