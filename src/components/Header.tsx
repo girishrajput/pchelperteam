@@ -35,12 +35,12 @@ const Header = () => {
       { name: 'Travel', href: '/industries/travel' },
     ],    
     services: [
-      { name: 'Web Designing', href: '/Service/web-designing' },
-      { name: 'Web Development', href: '/Service/web-development' },
-      { name: 'Mobile App Development', href: '/Service/mobile-app-development' },
-      { name: 'Digital Marketing', href: '/Service/digital-marketing' },
-      { name: 'WhatsApp Business Solutions', href: '/Service/whatsapp-business-solutions' },
-      { name: 'Promotional Video Services', href: '/Service/promotional-video-services' },
+      { name: 'Web Designing', href: '/services/web-designing' },
+      { name: 'Web Development', href: '/services/web-development' },
+      { name: 'Mobile App Development', href: '/services/mobile-app-development' },
+      { name: 'Digital Marketing', href: '/services/digital-marketing' },
+      { name: 'WhatsApp Business Solutions', href: '/services/whatsapp-business-solutions' },
+      { name: 'Promotional Video Services', href: '/services/promotional-video-services' },
     ]
   };
 
