@@ -110,7 +110,7 @@ const SERVICE_DATA = [
     title: "Design to Code Conversion",
     description:
       "Our PSD to HTML services convert your design files into clean, responsive, and functional websites. We ensure pixel-perfect accuracy while maintaining fast performance and SEO-friendly structure. The final output works smoothly across all browsers and devices. With expertise in HTML5 and responsive coding, we transform your designs into reliable and high-quality websites ready for real-world use.",
-    image: "/images/service/psd-to-html-services.jpg",
+    image: "/images/service/psd-to-html-services1.jpg",
   },
 ];
 
