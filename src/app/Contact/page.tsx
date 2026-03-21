@@ -4,7 +4,7 @@ import InnerHeader from '@/components/InnerHeader'
 
 const contactData = [
   {
-    title: "VGM Group Limited.",
+    title: "PCHelperTeam.",
     icon: <MapPin className="w-8 h-8 text-white" />,
     gradient: "from-red-600 to-indigo-600",
     content: (
@@ -51,7 +51,7 @@ const ContactPage = () => {
     <>
       {/* Hero Section */}
       <InnerHeader
-        title="Get in Touch with VGM Group limited."
+        title="Get in Touch with PCHelperTeam."
         subtitle="Serving clients worldwide — reach out to us anytime with your ideas."
       />
 

@@ -46,12 +46,12 @@ const Footer = () => {
               <div className="flex items-center gap-2 mb-6">
                 <Link href="/">
                   <Image
-                    src="/images/vgm-logo.png"
+                    src="/images/footer-logo.png"
                     alt="IRCOIT Logo"
                     width={150}
                     height={50}
                     priority
-                    className="object-contain cursor-pointer filter brightness-0 invert"
+                    className="object-contain cursor-pointer"
                   />
                 </Link>
               </div>
@@ -127,7 +127,7 @@ const Footer = () => {
 
           {/* Bottom Credits */}
           <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-zinc-600">
-            <p>© 2026 VGM Group Limited. All Rights Reserved.</p>
+            <p>© 2026 PCHelperTeam. All Rights Reserved.</p>
             <p>Designed with Girish.</p>
           </div>
         </div>

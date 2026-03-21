@@ -9,7 +9,7 @@ const AboutPage = () => {
       {/* Hero Section */}
 
       <InnerHeader
-        title="About VGM Group limited.   – Excellence Beyond Boundaries"
+        title="About PCHelperTeam.   – Excellence Beyond Boundaries"
         subtitle="Trusted offshore development partner delivering AI, web, and mobile solutions globally."
       />
 
@@ -20,7 +20,7 @@ const AboutPage = () => {
           <div>
             <h2 className="text-2xl font-bold text-red-800 mb-4 border-l-4 border-red-600 pl-4">Who We Are & What We Do</h2>
             <p className="leading-relaxed mb-4">
-              Since 1997, VGM Group limited.   has emerged as a trusted partner for businesses looking to grow and succeed. We help organizations harness the power of technology, transforming ideas into practical solutions.
+              Since 1997, PCHelperTeam.   has emerged as a trusted partner for businesses looking to grow and succeed. We help organizations harness the power of technology, transforming ideas into practical solutions.
             </p>
             <p>Our journey is defined by innovation, reliability, and client success.</p>
           </div>

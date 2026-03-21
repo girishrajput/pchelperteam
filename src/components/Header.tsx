@@ -50,7 +50,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/images/vgm-logo.png"
+            src="/images/pc-helper-logo.png"
             alt="IRCOIT Logo"
             width={150}
             height={50}

@@ -27,7 +27,7 @@ export default function ContactSection() {
             Join Hands with Us
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed mb-12 max-w-xl">
-            With a strong and diversified web presence, VGM Group limited. invites businesses
+            With a strong and diversified web presence, PCHelperTeam. invites businesses
             and individuals from every industry vertical to collaborate, innovate, and
             create meaningful impact in the digital world.
           </p>
