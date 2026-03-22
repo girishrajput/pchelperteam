@@ -148,7 +148,7 @@ export default function CreativeTabs() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 text-center">Our Specialized Services</h2>
         <p className="text-slate-600 max-w-2xl mx-auto mb-12 text-center italic">
-          High-performance IT infrastructure and security solutions for your business.
+          Focused on results we seek to raise the efficiency and productivity for our clients.
         </p>
 
         {/* Tab Navigation */}

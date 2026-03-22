@@ -2,17 +2,23 @@ import HeroSlider from '@/components/home/HeroSlider'
 import WeOffer from '@/components/home/WeOffer'
 import DrivingResults from '@/components/home/DrivingResults'    
 import Industries from '@/components/home/Industries'   
-import React from 'react'
+import OurPartners from '@/components/home/OurPartners'
 
-function page() {
-  return (
-  <>
-    <HeroSlider />
-    <WeOffer />
-    <DrivingResults />
-    <Industries />
-  </>
-  )
+// 1. Metadata must be exported from a Server Component
+export const metadata = {
+  title: 'Home | PCHelperTeam',
+  description: 'Driving business results with Smartbiz HRMS and custom technology solutions.',
 }
 
-export default page
+// 2. Ensure the function is marked as default export properly
+export default function HomePage() {
+  return (
+    <main>
+      <HeroSlider />
+      <WeOffer />
+      <OurPartners />
+      <DrivingResults />
+      <Industries />
+    </main>
+  )
+}

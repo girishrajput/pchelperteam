@@ -4,16 +4,12 @@ import InnerHeader from '@/components/InnerHeader'
 
 const contactData = [
   {
-    title: "PCHelperTeam.",
+    title: " 2370 Westwood Blvd Ste F Los Angeles, CA 90064",
     icon: <MapPin className="w-8 h-8 text-white" />,
     gradient: "from-red-600 to-indigo-600",
     content: (
-      <p className="text-gray-500 text-sm leading-relaxed">
-        Saife Mansion, 1st Floor,
-        Bibi Titi Mohammed Street,
-        P.O.Box 8523,
-        Dar Es Salaam, Tanzania,
-        Postal Code:11104
+      <p className="text-gray-500 text-sm leading-relaxed">        
+                Come visit us any time from 11 AM to 4 PM, from Monday to Friday, or by appointment outside of those hours.             
       </p>
     ),
   },
