@@ -66,7 +66,7 @@ const Download = () => {
               {/* Replace src with your actual image path */}
               <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-2xl transition-transform hover:scale-[1.02] duration-300">
                 <Image
-                  src="/about/man-working-computer.webp" 
+                  src="/about/about.png" 
                   alt="Professional working on laptop"
                   fill
                   className="object-cover"

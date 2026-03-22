@@ -47,10 +47,10 @@ const Footer = () => {
               <Image
                 src="/images/footer-logo.png"
                 alt="Logo"
-                width={240}
-                height={65}
+                width={200}
+                height={82}
                 priority
-                className="object-contain cursor-pointer"
+                className=""
               />
             </Link>
           </div>

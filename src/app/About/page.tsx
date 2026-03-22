@@ -1,9 +1,8 @@
 import React from 'react';
-// 1. Rename the icon to avoid conflict with Next.js Link
-import { Link as LinkIcon, CheckCircle2 } from 'lucide-react'; 
+import { CheckCircle2 } from 'lucide-react'; 
 import Image from "next/image";
-import InnerHeader from '@/components/InnerHeader';
 import Link from 'next/link';
+import InnerHeader from '@/components/InnerHeader';
 
 const AboutPage = () => {
   const locations = [
@@ -33,7 +32,7 @@ const AboutPage = () => {
                 We are a team of experienced and friendly IT professionals dedicated to customizing
                 technology to fit your wishes. We handle the hassle and clutter so you can enjoy life.
               </p>
-              {/* 2. Used as a block element, added 'inline-block' for proper padding */}
+              
               <Link href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg">
                 Get Support Now
               </Link>
@@ -41,12 +40,13 @@ const AboutPage = () => {
 
             <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 bg-slate-900/10 z-10" />
-              {/* 3. Using Next.js Image component for better performance */}
               <Image
-                src="/about/man-working-computer.webp"
+                src="/about/man-working-computer.png"
                 alt="IT Professional at work"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
+                style={{ objectFit: 'cover' }} // Maintains ratio while filling container
+                priority
               />
             </div>
           </div>
@@ -62,7 +62,7 @@ const AboutPage = () => {
                 </p>
                 <div className="flex items-center gap-2 text-red-600 font-medium text-sm">
                   <span>10+ Years of Excellence</span>
-                  <span className="h-1 w-1 rounded-full bg-slate-300"></span>
+                  <span className="h-1 w-1 rounded-full bg-slate-300" />
                   <span>Certified Pros</span>
                 </div>
               </div>
