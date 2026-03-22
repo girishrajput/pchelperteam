@@ -10,11 +10,11 @@ const Header = () => {
   // Define the menu items in a simple array for easy maintenance
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/About' },
+    { name: 'About', href: '/about' },
     { name: 'Download', href: '/download' },
-    { name: 'Our Portals', href: '/portals' },
+    { name: 'FT Portal', href: 'https://www.texource.com/' },
     { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/Contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Header = () => {
                 href="/contact" 
                 className="bg-red-600 text-white px-5 py-2 rounded-lg hover:bg-red-700 transition-all font-bold"
               >
-                Book Consultation
+                Book Free Consultation
               </Link>
             </li>
           </ul>
@@ -93,7 +93,7 @@ const Header = () => {
                 onClick={() => setIsMobileOpen(false)}
                 className="block bg-red-600 text-white text-center py-4 rounded-lg mt-4 shadow-lg active:scale-95 transition-transform"
               >
-                Book Consultation
+                Book Free Consultation
               </Link>
             </li>
           </ul>

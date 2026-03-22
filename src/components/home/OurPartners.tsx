@@ -12,12 +12,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 const PARTNERS = [
-  { id: 1, name: 'Partner One', logo: 'https://via.placeholder.com/150x80?text=Logo+1' },
-  { id: 2, name: 'Partner Two', logo: 'https://via.placeholder.com/150x80?text=Logo+2' },
-  { id: 3, name: 'Partner Three', logo: 'https://via.placeholder.com/150x80?text=Logo+3' },
-  { id: 4, name: 'Partner Four', logo: 'https://via.placeholder.com/150x80?text=Logo+4' },
-  { id: 5, name: 'Partner Five', logo: 'https://via.placeholder.com/150x80?text=Logo+5' },
-  { id: 6, name: 'Partner Six', logo: 'https://via.placeholder.com/150x80?text=Logo+6' },
+  { id: 1, name: 'Partner One', logo: '/home/1-1.png' },
+  { id: 2, name: 'Partner Two', logo: '/home/2-1.png' },
+  { id: 3, name: 'Partner Three', logo: '/home/3-1.png' },
+  { id: 4, name: 'Partner Four', logo: '/home/4-1.png' },
+  { id: 5, name: 'Partner Five', logo: '/home/5-1.png' },
+  { id: 6, name: 'Partner Six', logo: '/home/6-1.png' },
 ];
 
 export default function OurPartners() {
@@ -73,22 +73,22 @@ export default function OurPartners() {
                 <img 
                   src={partner.logo} 
                   alt={partner.name} 
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%', 
-                    objectFit: 'contain',
-                    filter: 'grayscale(100%)',
-                    opacity: 0.6,
-                    transition: '0.3s'
-                  }} 
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.filter = 'grayscale(0%)';
-                    e.currentTarget.style.opacity = '1';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.filter = 'grayscale(100%)';
-                    e.currentTarget.style.opacity = '0.6';
-                  }}
+                  // style={{ 
+                  //   maxWidth: '100%', 
+                  //   maxHeight: '100%', 
+                  //   objectFit: 'contain',
+                  //   filter: 'grayscale(100%)',
+                  //   opacity: 0.6,
+                  //   transition: '0.3s'
+                  // }} 
+                  // onMouseOver={(e) => {
+                  //   e.currentTarget.style.filter = 'grayscale(0%)';
+                  //   e.currentTarget.style.opacity = '1';
+                  // }}
+                  // onMouseOut={(e) => {
+                  //   e.currentTarget.style.filter = 'grayscale(100%)';
+                  //   e.currentTarget.style.opacity = '0.6';
+                  // }}
                 />
               </div>
             </SwiperSlide>

@@ -1,111 +1,96 @@
 import React from 'react';
-import { Eye, Target, Lightbulb, Users, TrendingUp, ShieldCheck } from 'lucide-react';
+// 1. Rename the icon to avoid conflict with Next.js Link
+import { Link as LinkIcon, CheckCircle2 } from 'lucide-react'; 
 import Image from "next/image";
-import InnerHeader from '@/components/InnerHeader'
+import InnerHeader from '@/components/InnerHeader';
+import Link from 'next/link';
 
 const AboutPage = () => {
+  const locations = [
+    "Southern Malibu", "Bel Air", "Pacific Palisades", "Santa Monica", "Encino",
+    "West Los Angeles", "Beverly Hills", "West Hollywood", "Downtown LA",
+    "Culver City", "Mar Vista", "Palms", "Cheviot Hills", "Beverly Glen", "Venice", "Marina Del Rey"
+  ];
+
   return (
     <>
-      {/* Hero Section */}
-
       <InnerHeader
-        title="About PCHelperTeam.   – Excellence Beyond Boundaries"
-        subtitle="Trusted offshore development partner delivering AI, web, and mobile solutions globally."
+        title="About Us"
+        subtitle=""
       />
 
-      {/* Main Content Grid */}
-      <section className="max-w-7xl mx-auto py-16 px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Column: Text Content */}
-        <div className="lg:col-span-7 space-y-10">
-          <div>
-            <h2 className="text-2xl font-bold text-red-800 mb-4 border-l-4 border-red-600 pl-4">Who We Are & What We Do</h2>
-            <p className="leading-relaxed mb-4">
-              Since 1997, PCHelperTeam.   has emerged as a trusted partner for businesses looking to grow and succeed. We help organizations harness the power of technology, transforming ideas into practical solutions.
+      <section className="bg-slate-50 py-16 px-6 md:px-12 lg:px-24 font-sans text-slate-800">
+        <div className="max-w-7xl mx-auto">
+
+          {/* --- Hero / Intro Section --- */}
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div className="space-y-6">
+              <h2 className="text-red-600 font-bold tracking-wide uppercase text-sm">About PCHelperTeam</h2>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                Your One-Stop Shop for <span className="text-red-600">Total Tech Support.</span>
+              </h1>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We are a team of experienced and friendly IT professionals dedicated to customizing
+                technology to fit your wishes. We handle the hassle and clutter so you can enjoy life.
+              </p>
+              {/* 2. Used as a block element, added 'inline-block' for proper padding */}
+              <Link href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg">
+                Get Support Now
+              </Link>
+            </div>
+
+            <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-2xl">
+              <div className="absolute inset-0 bg-slate-900/10 z-10" />
+              {/* 3. Using Next.js Image component for better performance */}
+              <Image
+                src="/about/man-working-computer.webp"
+                alt="IT Professional at work"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+
+          {/* --- Service Areas & Trust Section --- */}
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
+            <div className="grid lg:grid-cols-3 gap-12">
+
+              <div className="lg:col-span-1">
+                <h3 className="text-2xl font-bold mb-4">Where We Operate</h3>
+                <p className="text-slate-500 mb-6">
+                  Providing expert technical support and equipment to small businesses and residences across West Los Angeles.
+                </p>
+                <div className="flex items-center gap-2 text-red-600 font-medium text-sm">
+                  <span>10+ Years of Excellence</span>
+                  <span className="h-1 w-1 rounded-full bg-slate-300"></span>
+                  <span>Certified Pros</span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {locations.map((city) => (
+                    <div key={city} className="flex items-center space-x-2 text-slate-600 hover:text-red-600 transition-colors">
+                      <CheckCircle2 className="w-4 h-4 text-red-500" />
+                      <span className="text-sm">{city}</span>
+                    </div>
+                  ))}
+                  <div className="text-sm italic text-slate-400">...and surrounding areas</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-slate-500 italic max-w-2xl mx-auto">
+              &ldquo;We strive for your full happiness and we try to go beyond what you expect. It is a promise.&rdquo;
             </p>
-            <p>Our journey is defined by innovation, reliability, and client success.</p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-red-800 mb-4 border-l-4 border-red-600 pl-4">Our Philosophy</h2>
-            <ul className="space-y-4">
-              <li className="flex gap-3">
-                <span className="h-2 w-2 bg-red-600 rounded-full mt-2 shrink-0" />
-                <p><strong>People-Centric:</strong> Every product is designed with users in mind.</p>
-              </li>
-              <li className="flex gap-3">
-                <span className="h-2 w-2 bg-red-600 rounded-full mt-2 shrink-0" />
-                <p><strong>Innovation:</strong> We embrace emerging trends to keep clients ahead.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Right Column: Certification Image */}
-        <div className="lg:col-span-5 flex justify-center items-start">
-          <div className="shadow-2xl rounded-lg overflow-hidden border border-gray-100 hover:scale-105 transition-transform duration-300">
-            <Image src="/about/certificate.png" alt="ISO 9001:2015 Certified" width={400} height={300} />
-          </div>
-        </div>
-      </section>
-
-      {/* Vision & Mission Cards */}
-      <section className="bg-gray-50 py-16 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex items-start gap-6 hover:shadow-md transition">
-            <div className="bg-red-100 p-4 rounded-full text-red-600">
-              <Eye size={40} />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Vision</h3>
-              <p className="text-gray-600">To cultivate par-excellence services with a customer-centric approach, earning the trust of clients worldwide.</p>
-            </div>
-          </div>
-
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex items-start gap-6 hover:shadow-md transition">
-            <div className="bg-red-100 p-4 rounded-full text-red-600">
-              <Target size={40} />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Mission</h3>
-              <p className="text-gray-600">To achieve harmonious alignment between our capabilities and client requirements through transparency.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values Section */}
-      <section className="max-w-7xl mx-auto py-20 px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="hidden lg:block">
-          {/* Using a placeholder for your illustration */}
-          <img src="/about/core-values.png" alt="Core Values Illustration" className="w-full h-auto" />
-        </div>
-
-        <div>
-          <h2 className="text-3xl font-bold text-red-900 mb-8">Our Core Values</h2>
-          <div className="space-y-8">
-            <ValueItem icon={<Users />} title="Transpicuous Work Culture" text="Integrity is our cornerstone. We uphold transparency ethically and socially." />
-            <ValueItem icon={<TrendingUp />} title="Result Orientation" text="Clear goals and vigilant project monitoring define our approach." />
-            <ValueItem icon={<Lightbulb />} title="Innovation" text="Out-of-the-box thinking unlocks hidden possibilities." />
-            <ValueItem icon={<ShieldCheck />} title="Quality-Driven" text="We forge enduring relationships by delivering nothing but the best." />
           </div>
         </div>
       </section>
     </>
   );
 };
-
-// Helper component for core values
-const ValueItem = ({ icon, title, text }: { icon: any, title: string, text: string }) => (
-  <div className="flex gap-4 group">
-    <div className="bg-gray-100 text-red-600 p-3 rounded-lg group-hover:bg-red-600 group-hover:text-white transition">
-      {icon}
-    </div>
-    <div>
-      <h4 className="font-bold text-lg mb-1">{title}</h4>
-      <p className="text-gray-600 leading-snug">{text}</p>
-    </div>
-  </div>
-
-);
 
 export default AboutPage;
