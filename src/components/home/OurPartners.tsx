@@ -76,7 +76,7 @@ export default function OurPartners() {
                   alt={partner.name}
                   width={140}
                   height={80}
-                  className="object-contain"
+                  className="w-full h-auto"
                 />
               </div>
             </SwiperSlide>

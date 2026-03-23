@@ -38,10 +38,10 @@ const AboutPage = () => {
               </Link>
             </div>
 
-            <div className="relative h-[350px] w-full overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative w-full h-[400px] overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 bg-slate-900/10 z-10" />
               <Image
-                src="/about/about.png"
+                src="/about/aboutus.jpg"
                 alt="About"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
