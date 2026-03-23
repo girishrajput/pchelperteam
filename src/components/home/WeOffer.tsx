@@ -20,8 +20,7 @@ import {
   Laptop, 
   Layers, 
   Recycle, 
-  PhoneCall,
-  LucideIcon 
+  PhoneCall
 } from "lucide-react";
 
 // 1. Unified Data Object

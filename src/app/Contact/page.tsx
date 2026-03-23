@@ -89,17 +89,4 @@ const ContactPage = () => {
   );
 };
 
-// Helper component for core values
-const ValueItem = ({ icon, title, text }: { icon: any, title: string, text: string }) => (
-  <div className="flex gap-4 group">
-    <div className="bg-gray-100 text-red-600 p-3 rounded-lg group-hover:bg-red-600 group-hover:text-white transition">
-      {icon}
-    </div>
-    <div>
-      <h4 className="font-bold text-lg mb-1">{title}</h4>
-      <p className="text-gray-600 leading-snug">{text}</p>
-    </div>
-  </div>
-);
-
 export default ContactPage;

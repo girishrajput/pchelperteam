@@ -48,7 +48,7 @@ export default function ContactSection() {
         <div className="lg:w-1/2 w-full">
           <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 border border-slate-100">
             <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center lg:text-left">
-              Let's Talk About Your Idea
+              Let&apos;s Talk About Your Idea
             </h3>
 
             <form action={handleAction} className="space-y-4">

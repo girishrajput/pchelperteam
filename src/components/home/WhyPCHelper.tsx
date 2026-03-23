@@ -91,7 +91,7 @@ export default function RedCreativePCHelper() {
   );
 }
 
-function ReviewCardRed({ name, text, platform, isDark = false }: any) {
+function ReviewCardRed({ name, text, platform, isDark = false }: { name: string, text: string, platform: string, isDark?: boolean }) {
   return (
     <div className={`p-8 rounded-[2.5rem] transition-all hover:-translate-y-2 duration-300 border shadow-sm ${
       isDark ? 'bg-zinc-950 border-zinc-800' : 'bg-white border-zinc-200'
@@ -114,7 +114,7 @@ function ReviewCardRed({ name, text, platform, isDark = false }: any) {
       </div>
 
       <p className={`text-sm leading-relaxed font-medium mb-6 ${isDark ? 'text-zinc-400 italic' : 'text-zinc-600'}`}>
-        "{text}"
+        &quot;{text}&quot;
       </p>
 
       <div className={`pt-6 border-t ${isDark ? 'border-zinc-800' : 'border-zinc-100'} flex items-center gap-2`}>

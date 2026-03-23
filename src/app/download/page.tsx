@@ -1,9 +1,6 @@
 import React from 'react';
-// 1. Rename the icon to avoid conflict with Next.js Link
-import { Link as LinkIcon, CheckCircle2, } from 'lucide-react'; 
 import Image from "next/image";
 import InnerHeader from '@/components/InnerHeader';
-import Link from 'next/link';
 
 const Download = () => {
   

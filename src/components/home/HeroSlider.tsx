@@ -37,7 +37,7 @@ export default function HeroSlider() {
 
   // Fixes Hydration Mismatch by waiting for the client to mount
   useEffect(() => {
-    setMounted(true);
+    setMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
   }, []);
 
   if (!mounted) {

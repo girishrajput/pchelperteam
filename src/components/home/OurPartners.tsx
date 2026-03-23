@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper modules
@@ -70,25 +71,12 @@ export default function OurPartners() {
                 height: '80px',
                 padding: '10px'
               }}>
-                <img 
+                <Image 
                   src={partner.logo} 
-                  alt={partner.name} 
-                  // style={{ 
-                  //   maxWidth: '100%', 
-                  //   maxHeight: '100%', 
-                  //   objectFit: 'contain',
-                  //   filter: 'grayscale(100%)',
-                  //   opacity: 0.6,
-                  //   transition: '0.3s'
-                  // }} 
-                  // onMouseOver={(e) => {
-                  //   e.currentTarget.style.filter = 'grayscale(0%)';
-                  //   e.currentTarget.style.opacity = '1';
-                  // }}
-                  // onMouseOut={(e) => {
-                  //   e.currentTarget.style.filter = 'grayscale(100%)';
-                  //   e.currentTarget.style.opacity = '0.6';
-                  // }}
+                  alt={partner.name}
+                  width={140}
+                  height={80}
+                  className="object-contain"
                 />
               </div>
             </SwiperSlide>
