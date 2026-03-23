@@ -34,9 +34,11 @@ const Header = () => {
           <Image
             src="/images/pc-helper-logo.png"
             className="w-full h-auto"
-            width={500}
-            height={300}
+            width={140}
+            height={50}
+            style={{ width: '190px', height: 'auto' }}
             alt="Logo"
+            priority
           />
         </Link>
 

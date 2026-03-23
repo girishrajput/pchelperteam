@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react'; 
+import { CheckCircle2 } from 'lucide-react';
 import Image from "next/image";
 import Link from 'next/link';
 import InnerHeader from '@/components/InnerHeader';
@@ -32,21 +32,20 @@ const AboutPage = () => {
                 We are a team of experienced and friendly IT professionals dedicated to customizing
                 technology to fit your wishes. We handle the hassle and clutter so you can enjoy life.
               </p>
-              
+
               <Link href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-lg">
                 Get Support Now
               </Link>
             </div>
 
-            <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative h-[350px] w-full overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 bg-slate-900/10 z-10" />
               <Image
-                src="/about/man-working-computer.png"
-                alt="IT Professional at work"
+                src="/about/about.png"
+                alt="About"
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
-                style={{ objectFit: 'cover' }} // Maintains ratio while filling container
-                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </div>

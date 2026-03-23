@@ -39,7 +39,7 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <Header />
-        <main className="pt-24">{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

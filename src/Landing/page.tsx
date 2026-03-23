@@ -3,6 +3,7 @@ import WeOffer from '@/components/home/WeOffer'
 import DrivingResults from '@/components/home/DrivingResults'    
 import Industries from '@/components/home/Industries'   
 import OurPartners from '@/components/home/OurPartners'
+import WhyPCHelper from '@/components/home/WhyPCHelper'
 
 // 1. Metadata must be exported from a Server Component
 export const metadata = {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroSlider />
       <WeOffer />
       <OurPartners />
+      <WhyPCHelper />
       <DrivingResults />
       <Industries />
     </main>

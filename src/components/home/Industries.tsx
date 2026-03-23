@@ -1,26 +1,23 @@
 'use client';
 import React from 'react';
 import { 
+  Calculator, 
   Home, 
-  Briefcase, 
-  Heart, 
-  Globe, 
-  ShoppingCart, 
-  GraduationCap, 
-  Plane, 
-  PlusCircle,
-  ArrowRight 
+  Headset, 
+  Landmark, 
+  Scale, 
+  Building2, 
+  ArrowRight, 
 } from 'lucide-react';
+import Link from 'next/link';
 
 const industries = [
-  { name: "Real Estate", icon: Home },
-  { name: "Jobs & Recruiters", icon: Briefcase },
-  { name: "Matrimonial", icon: Heart },
-  { name: "B2B/B2C", icon: Globe },
-  { name: "E-Commerce", icon: ShoppingCart },
-  { name: "School & Education", icon: GraduationCap },
-  { name: "Travel", icon: Plane },
-  { name: "Health Care", icon: PlusCircle },
+  { name: "Accounting Firms", icon: Calculator },
+  { name: "Funds & Family Offices", icon: Home },
+  { name: "Healthcare and Science", icon: Headset },
+  { name: "Financial Institutions", icon: Landmark },
+  { name: "Law Firms", icon: Scale },
+  { name: "Real Estate", icon: Building2 },
 ];
 
 export default function IndustriesSection() {
@@ -37,14 +34,14 @@ export default function IndustriesSection() {
             Our expertise spans multiple sectors, providing smart solutions that drive growth and efficiency. 
             From startups to established businesses, we make an impact everywhere.
           </p>
-          <button className="group flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg transition-all shadow-lg shadow-teal-100">
+          <Link href="/contact" className="group flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg transition-all shadow-lg shadow-teal-100 w-48">
             Get a Quote 
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
 
         {/* Right Side: Interactive Grid */}
-        <div className="lg:w-1/2 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-4">
           {industries.map((item, index) => (
             <div 
               key={index} 

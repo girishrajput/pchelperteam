@@ -1,8 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import Link from 'next/link';
 
 // Import Swiper styles
 import "swiper/css";
@@ -31,11 +33,23 @@ const slides = [
 ];
 
 export default function HeroSlider() {
+  const [mounted, setMounted] = useState(false);
+
+  // Fixes Hydration Mismatch by waiting for the client to mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Optional: Return a black placeholder or a skeleton to prevent layout shift
+    return <section className="relative w-full h-screen bg-black" />;
+  }
+
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[calc(50vh-80px)] md:h-[calc(100vh-80px)] overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
-        effect="fade" // Smoother transition for video backgrounds
+        effect="fade"
         slidesPerView={1}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
@@ -90,9 +104,9 @@ export default function HeroSlider() {
                   transition={{ delay: 0.6, duration: 0.5 }}
                   viewport={{ once: false }}
                 >
-                  <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold transition-all transform hover:scale-105 active:scale-95 shadow-lg">
+                  <Link href="/contact" className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold transition-all transform hover:scale-105 active:scale-95 shadow-lg">
                     Get Started
-                  </button>
+                  </Link>
                 </motion.div>
               </div>
 
@@ -101,14 +115,14 @@ export default function HeroSlider() {
         ))}
       </Swiper>
 
-      {/* Custom Swiper Pagination Styling (Optional) */}
+      {/* Global Styles for Swiper dots */}
       <style jsx global>{`
         .swiper-pagination-bullet {
           background: white !important;
           opacity: 0.5;
         }
         .swiper-pagination-bullet-active {
-          background: #dc2626 !important; /* tailwind red-600 */
+          background: #dc2626 !important;
           opacity: 1;
         }
       `}</style>
